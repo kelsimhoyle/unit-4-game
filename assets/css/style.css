@@ -3,16 +3,20 @@ body {
     width: 75%;
     text-align: center;
     font-family:  'Open Sans', sans-serif;
-    background-image: url("../images/swirl_pattern.png");
-    background-repeat: repeat;
+    background-image: url("../images/crystalbackground.jpg");
+    /* Photo by Jonny Lew from Pexels */
+    background-size: 100vw;
 }
 
-/* Color Theme Swatches in Hex */
-.Wilderness-1-hex { color: #474073; }
-.Wilderness-2-hex { color: #4F4D8C; }
-.Wilderness-3-hex { color: #8F8EBF; }
-.Wilderness-4-hex { color: #2E4159; }
-.Wilderness-5-hex { color: #262626; }
+
+
+/* Color Theme Swatches in RGBA */
+/* .Amethyst-crystals-close-up.-Druze-within-a-very-large-geode.-1-rgba { color: rgba(101, 51, 114, 1); }
+.Amethyst-crystals-close-up.-Druze-within-a-very-large-geode.-2-rgba { color: rgba(128, 41, 165, 1); }
+.Amethyst-crystals-close-up.-Druze-within-a-very-large-geode.-3-rgba { color: rgba(112, 47, 140, 1); }
+.Amethyst-crystals-close-up.-Druze-within-a-very-large-geode.-4-rgba { color: rgba(176, 141, 191, 1); }
+.Amethyst-crystals-close-up.-Druze-within-a-very-large-geode.-5-rgba { color: rgba(127, 32, 191, 1); } */
+
 
 .clearfix::after {
     content: "";
@@ -33,7 +37,7 @@ header {
 }
 
 div.game {
-    background-color: #8F8EBF;
+    background-color: rgba(176, 141, 191, .5);
     padding: 25px;
 }
 
@@ -42,7 +46,8 @@ div.crystal {
     height: 175px;
     background-color: white;
     display: inline-block;
-    border: 2px solid black;
+    border: 2px solid rgba(101, 51, 114, 1);
+    border-radius: 5%;
     margin: 2px;
     vertical-align: middle;
 }
@@ -51,8 +56,14 @@ div.crystal {
     width: 95%;
 }
 
-.total-score, 
-.target-number {
+#target-number {
+    font-size: 50px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: whitesmoke;
+}
+
+.total-score {
     width: 50%;
     height: 150px;
     float: left;
