@@ -1,0 +1,65 @@
+body {
+    margin: auto;
+    width: 75%;
+    text-align: center;
+    font-family:  'Open Sans', sans-serif;
+    background-image: url("../images/swirl_pattern.png");
+    background-repeat: repeat;
+}
+
+/* Color Theme Swatches in Hex */
+.Wilderness-1-hex { color: #474073; }
+.Wilderness-2-hex { color: #4F4D8C; }
+.Wilderness-3-hex { color: #8F8EBF; }
+.Wilderness-4-hex { color: #2E4159; }
+.Wilderness-5-hex { color: #262626; }
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+h1 {
+    font-family:'Berkshire Swash', cursive;
+    font-size: 30px;
+    padding: 30px;
+    color: lightgray;;
+}
+
+header {
+    background-color: #4F4D8C;
+    width: 100%;
+}
+
+div.game {
+    background-color: #8F8EBF;
+    padding: 25px;
+}
+
+div.crystal {
+    width: 175px;
+    height: 175px;
+    background-color: white;
+    display: inline-block;
+    border: 2px solid black;
+    margin: 2px;
+    vertical-align: middle;
+}
+
+.crystal img {
+    width: 95%;
+}
+
+.total-score, 
+.target-number {
+    width: 50%;
+    height: 150px;
+    float: left;
+    padding: 20px
+}
+
+.score {
+    float: right;
+    width: 50%;
+}
