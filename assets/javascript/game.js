@@ -21,7 +21,8 @@ $(document).ready(function () {
         targetNum = Math.floor(Math.random() * 100) + 20;
     }
 
-    function playGame() {
+    function startGame() {
+        $("#winning-div, #losing-div").hide();
         createNumbers();
         $("#crystal1").attr("data-value", crystalOneNum);
         $("#crystal2").attr("data-value", crystalTwoNum);
@@ -30,16 +31,17 @@ $(document).ready(function () {
         runningTotal = 0;
         gameOver = false;
         $("#target-number").text(targetNum);
-
+        $("#running-total").text(runningTotal);
+        $("#wins-text").text(wins);
+        $("#losses-text").text(losses);
     }
 
-    playGame();
+    startGame();
 
     // when the crystal is clicked, get the data-value attr and add it to the runningTotal
     $(".crystal").on("click", function () {
         if(gameOver) return;
         
-
         if (runningTotal < targetNum) {
             var crystalNum = parseInt($(this).attr("data-value"));
             runningTotal += crystalNum;
@@ -49,13 +51,17 @@ $(document).ready(function () {
         
         if (runningTotal > targetNum) {
             losses++;
-            alert("You Lose");
+            $("#losing-div").show();
             gameOver = true;
-        }         if (runningTotal === targetNum) {
+        } else if (runningTotal === targetNum) {
             wins++;
+            $("#winning-div").show();
             gameOver = true;
-            alert("You Win!");
         }
+    });
+
+    $(".play-again").on("click", function() {
+        startGame();
     });
 
 });

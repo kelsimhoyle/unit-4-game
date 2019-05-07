@@ -1,52 +1,59 @@
 body {
     margin: auto;
-    width: 75%;
     text-align: center;
     font-family:  'Open Sans', sans-serif;
-    background-image: url("../images/crystalbackground.jpg");
-    /* Photo by Jonny Lew from Pexels */
-    background-size: 100vw;
+    background-image: url("../images/congruent_pentagon.png");
+background-repeat: repeat;
 }
-
-
-
-/* Color Theme Swatches in RGBA */
-/* .Amethyst-crystals-close-up.-Druze-within-a-very-large-geode.-1-rgba { color: rgba(101, 51, 114, 1); }
-.Amethyst-crystals-close-up.-Druze-within-a-very-large-geode.-2-rgba { color: rgba(128, 41, 165, 1); }
-.Amethyst-crystals-close-up.-Druze-within-a-very-large-geode.-3-rgba { color: rgba(112, 47, 140, 1); }
-.Amethyst-crystals-close-up.-Druze-within-a-very-large-geode.-4-rgba { color: rgba(176, 141, 191, 1); }
-.Amethyst-crystals-close-up.-Druze-within-a-very-large-geode.-5-rgba { color: rgba(127, 32, 191, 1); } */
-
-
-.clearfix::after {
-    content: "";
-    clear: both;
-    display: table;
-  }
 
 h1 {
-    font-family:'Berkshire Swash', cursive;
     font-size: 30px;
-    padding: 30px;
-    color: lightgray;;
+
+    padding-bottom: 20px;
+    border-bottom: 2px solid darkslategray;;
+}
+h1, h2 {
+font-family: 'Playfair Display SC', serif;
+letter-spacing: 2px;
+color: darkslategray;
 }
 
-header {
-    background-color: #4F4D8C;
-    width: 100%;
+h2 {
+    font-size: 20px;
+    padding: 5px;
+
 }
+
+li {
+    color: #208F96;
+    font-size: 16px;
+    letter-spacing: 2px;
+    line-height: 2;
+}
+
+
 
 div.game {
-    background-color: rgba(176, 141, 191, .5);
+    background-color: rgba(211,211,211, .5);
     padding: 25px;
+    border-radius: 2%;
+    width: 70%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.rules {
+    margin: 25px 0;
 }
 
 div.crystal {
-    width: 175px;
-    height: 175px;
+    width: 125px;
+    height: 125px;
     background-color: white;
     display: inline-block;
-    border: 2px solid rgba(101, 51, 114, 1);
+    border: 2px solid #67C3C9;
     border-radius: 5%;
     margin: 2px;
     vertical-align: middle;
@@ -56,21 +63,49 @@ div.crystal {
     width: 95%;
 }
 
-#target-number {
-    font-size: 50px;
+.number {
+    font-size: 22px;
     font-weight: bold;
-    letter-spacing: 2px;
-    color: whitesmoke;
+    line-height: 1.5;
+    letter-spacing: 5px;
+    color: darkslategrey;
+
 }
 
-.total-score {
+.game-view {
+    width: 50%;
     width: 50%;
     height: 150px;
     float: left;
     padding: 20px
 }
 
-.score {
+#winning-div,
+#losing-div {
+    width: 50%;
+    height: 20%;
+    padding: 5%;
+    border: 2px solid rgba(229, 255, 211, 1);
+    border-radius: 10px;
+    background-color: #67C3C9;
+    position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+.left {
+    float: left;
+    width: 50%;
+}
+
+.right {
     float: right;
     width: 50%;
 }

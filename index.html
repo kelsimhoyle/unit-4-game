@@ -5,33 +5,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash|Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Playfair+Display+SC" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Crystals Collector Game</title>
 </head>
 
 <body>
-    <header>
-        <h1>Crystals Collector</h1>
-    </header>
-    <div class="rules">
-        <!-- write rules here -->
-    </div>
+
     <div class="game">
-        <div class="clearfix">
-        <div>
-            <p id="target-number"></p>
-            <!-- target number will go here -->
-        </div>
-        <div class="total-score">
-                <p>Your score so far is: <span id="running-total"></span></p>
+
+        <h1>Crystal Collector</h1>
+        <ul class="rules">
+            <li>A random target number will given at the beginning of each game.</li>
+            <li>The crystals will each be given secret specific amount.</li>
+            <li>Your job is to figure out what those amounts are, and chose the right combinations of crystals in order
+                to added up to the target score.</li>
+            <li>Be careful, if you go over the target score, then you lose!</li>
+        </ul>
+        <div class="number-view clearfix">
+            <div class="left">
+                <!-- target number will go here -->
+                <h2>Target Number:</h2>
+                <p id="target-number" class="number"></p>
             </div>
-        <div class="score">
-            <p>Wins: <span id="wins-text"></span></p>
-            <p>Losses: <span id="losses-text"></span></p>
+            <div class="right">
+                <h2>Your number so far is: </h2>
+                <p id="running-total" class="number"></p>
+            </div>
         </div>
-    </div>
         <div class="crystals-display">
             <div class="crystal" id="crystal1">
                 <img src="assets/images/blueGemstone.jpg">
@@ -45,6 +47,24 @@
             <div class="crystal" id="crystal4">
                 <img src="assets/images/rubyGemstone.jpg">
             </div>
+        </div>
+        <div class="clearfix">
+            <div class="left">
+                <h2>Wins:</h2>
+                <p id="wins-text" class="number"></p>
+            </div>
+            <div class="right">
+                <h2>Losses:</h2>
+                <p id="losses-text" class="number"></p>
+            </div>
+        </div>
+        <div id="losing-div">
+            <h2>You went over. You lose!</h2>
+            <button class="play-again">Try Again</button>
+        </div>
+        <div id="winning-div">
+            <h2>You got it! Great job!!</h2>
+            <button class="play-again">Play Again</button>
         </div>
     </div>
 
