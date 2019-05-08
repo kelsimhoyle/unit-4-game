@@ -38,7 +38,6 @@ $(document).ready(function () {
     }
 
     function createCrystals() {
-        alert("creating crystals");
         for (var i = 0; i < crystalsList.length; i++ ) {
             // create a div for the crystals to go to with a specific  value
             var crystalDiv = $("<div>").addClass("crystal").attr("id", crystalsList[i].crystal)
@@ -52,8 +51,8 @@ $(document).ready(function () {
     }
 
     function startGame() {
-        $("#winning-div, #losing-div").hide();
         $("#crystals-display").empty();
+        $("#winning-div, #losing-div").hide();
         createNumbers();
         createCrystals();
         runningTotal = 0;
@@ -62,31 +61,34 @@ $(document).ready(function () {
         $("#running-total").text(runningTotal);
         $("#wins-text").text(wins);
         $("#losses-text").text(losses);
+
+        $(".crystal").on("click", function () {
+            console.log("clicked");
+            if (gameOver) return;
+            if (runningTotal < targetNum) {
+                var crystalNum = parseInt($(this).attr("data-value"));
+                runningTotal += crystalNum;
+                console.log(runningTotal);
+                $("#running-total").text(runningTotal);
+            }
+    
+            if (runningTotal > targetNum) {
+                losses++;
+                $("#losing-div").show();
+                gameOver = true;
+            } else if (runningTotal === targetNum) {
+                wins++;
+                $("#winning-div").show();
+                gameOver = true;
+            }
+        });
+    
     }
 
     startGame();
 
     // when the crystal is clicked, get the data-value attr and add it to the runningTotal
-    $(".crystal").on("click", function () {
-        if (gameOver) return;
-        if (runningTotal < targetNum) {
-            var crystalNum = parseInt($(this).attr("data-value"));
-            runningTotal += crystalNum;
-            console.log(runningTotal);
-            $("#running-total").text(runningTotal);
-        }
-
-        if (runningTotal > targetNum) {
-            losses++;
-            $("#losing-div").show();
-            gameOver = true;
-        } else if (runningTotal === targetNum) {
-            wins++;
-            $("#winning-div").show();
-            gameOver = true;
-        }
-    });
-
+    
     $(".play-again").on("click", function () {
         startGame();
     });
